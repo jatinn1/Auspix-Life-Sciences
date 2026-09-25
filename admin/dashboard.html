@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Auspix Life Sciences</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="dashboard-header">
+    <div class="dashboard-nav">
+        <a href="../index.html" class="dashboard-logo">
+            <img src="../assets/logo.png" alt="Auspix Life Sciences">
+        </a>
+
+        <div class="admin-user">
+            <span id="adminName">Admin</span>
+            <button id="logoutBtn" type="button">Logout</button>
+        </div>
+    </div>
+</header>
+
+<main class="dashboard-main">
+    <div class="dashboard-container">
+
+        <div class="dashboard-heading">
+            <div>
+                <span class="dashboard-label">ADMIN PANEL</span>
+                <h1>Dashboard</h1>
+                <p>Manage and review customer enquiries.</p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon">✉</div>
+        <div>
+            <span>Total Enquiries</span>
+            <strong id="totalEnquiries">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">◷</div>
+        <div>
+            <span>Today's Enquiries</span>
+            <strong id="todayEnquiries">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">▣</div>
+        <div>
+            <span>This Month</span>
+            <strong id="monthEnquiries">0</strong>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">★</div>
+        <div>
+            <span>Latest Enquiry</span>
+            <strong id="latestEnquiry">—</strong>
+        </div>
+    </div>
+</div>
+            <div class="stat-card">
+                <div class="stat-icon">✉</div>
+                <div>
+                    <span>Total Enquiries</span>
+                    <strong id="totalEnquiries">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+                <div>
+                    <span>Latest Enquiry</span>
+                    <strong id="latestEnquiry">—</strong>
+                </div>
+            </div>
+        </div>
+
+        <section class="enquiries-section">
+            <div class="section-header">
+                <div>
+                    <span class="dashboard-label">CUSTOMER ENQUIRIES</span>
+                    <h2>All Enquiries</h2>
+                </div>
+
+               <div class="search-controls">
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search enquiries..."
+        >
+    </div>
+
+    <div class="filter-box">
+        <select id="statusFilter">
+            <option value="ALL">All Status</option>
+            <option value="NEW">New</option>
+            <option value="CONTACTED">Contacted</option>
+            <option value="COMPLETED">Completed</option>
+        </select>
+    </div>
+</div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="enquiries-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="enquiriesTableBody">
+                    </tbody>
+                </table>
+
+                <div class="empty-state" id="emptyState">
+                    <p>No enquiries found.</p>
+                </div>
+
+                <div class="modal" id="enquiryModal">
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose" type="button">×</button>
+
+        <span class="dashboard-label">ENQUIRY DETAILS</span>
+        <h2>Customer Enquiry</h2>
+
+        <div class="detail-grid">
+            <div class="detail-item">
+                <span>Name</span>
+                <strong id="detailName">—</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Company</span>
+                <strong id="detailCompany">—</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Email</span>
+                <strong id="detailEmail">—</strong>
+            </div>
+
+            <div class="detail-item">
+                <span>Phone</span>
+                <strong id="detailPhone">—</strong>
+            </div>
+
+            <div class="detail-item">
+    <span>Status</span>
+    <strong id="detailStatus">NEW</strong>
+</div>
+
+            <div class="detail-item detail-message">
+                <span>Message</span>
+                <p id="detailMessage">—</p>
+            </div>
+
+            <div class="detail-item">
+                <span>Submitted</span>
+                <strong id="detailDate">—</strong>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
