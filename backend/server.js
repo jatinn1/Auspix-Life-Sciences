@@ -13,6 +13,10 @@ dns.setServers(["8.8.8.8"]);
 
 const app = express();
 
+const allowedOrigins = process.env.FRONTEND_URL
+    ? process.env.FRONTEND_URL.split(",").map((origin) => origin.trim())
+    : ["http://localhost:5500", "http://127.0.0.1:5500"];
+
 const adminLoginLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 10,
@@ -36,7 +40,13 @@ const enquiryLimiter = rateLimit({
 app.use(helmet());
 
 app.use(cors({
-    origin: true,
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
@@ -44,7 +54,7 @@ app.use(cors({
 app.use(express.json({ limit: "1mb" }));
 
 app.use("/api/admin/login", adminLoginLimiter);
-app.use("/api/enquiries", enquiryLimiter);
+app.post("/api/enquiries", enquiryLimiter);
 
 app.use("/api/enquiries", enquiryRoutes);
 app.use("/api/admin", adminRoutes);
