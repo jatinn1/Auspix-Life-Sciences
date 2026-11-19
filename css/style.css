@@ -1179,7 +1179,6 @@ body {
     width: 190px;
     height: auto;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
@@ -1546,5 +1545,124 @@ button {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+@media (max-width: 1050px) {
+    .nav-container {
+        height: auto;
+        min-height: 75px;
+        padding: 12px 0;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .logo img {
+        width: 165px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2;
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .navigation {
+        width: 100%;
+        order: 3;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .navigation.active {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 12px 0 5px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 11px 0;
+    }
+
+    .enquiry-btn {
+        display: none;
+    }
+
+    .navbar.scrolled .nav-container {
+        height: auto;
+    }
+}
+.cow-mascot {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 5px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .cow-mascot {
+        width: 72px;
+        height: 72px;
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-container {
+    position: relative;
+}
+
+.cow-mascot {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 5px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .cow-mascot {
+        width: 72px;
+        height: 72px;
+        right: 10px;
+        bottom: 10px;
     }
 }

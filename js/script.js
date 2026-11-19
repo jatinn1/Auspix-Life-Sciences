@@ -46,7 +46,7 @@ if (contactForm) {
         const phone = document.querySelector("#phone").value.trim();
         const message = document.querySelector("#message").value.trim();
 
-        if (!name || !email || !message) {
+        if (!name || !email || !phone || !message) {
             formMessage.textContent = "Please fill in all required fields.";
             formMessage.classList.add("active");
             return;

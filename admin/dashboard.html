@@ -33,38 +33,6 @@
         </div>
 
         <div class="stats-grid">
-    <div class="stat-card">
-        <div class="stat-icon">✉</div>
-        <div>
-            <span>Total Enquiries</span>
-            <strong id="totalEnquiries">0</strong>
-        </div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-icon">◷</div>
-        <div>
-            <span>Today's Enquiries</span>
-            <strong id="todayEnquiries">0</strong>
-        </div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-icon">▣</div>
-        <div>
-            <span>This Month</span>
-            <strong id="monthEnquiries">0</strong>
-        </div>
-    </div>
-
-    <div class="stat-card">
-        <div class="stat-icon">★</div>
-        <div>
-            <span>Latest Enquiry</span>
-            <strong id="latestEnquiry">—</strong>
-        </div>
-    </div>
-</div>
             <div class="stat-card">
                 <div class="stat-icon">✉</div>
                 <div>
@@ -75,6 +43,22 @@
 
             <div class="stat-card">
                 <div class="stat-icon">◷</div>
+                <div>
+                    <span>Today's Enquiries</span>
+                    <strong id="todayEnquiries">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">▣</div>
+                <div>
+                    <span>This Month</span>
+                    <strong id="monthEnquiries">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">★</div>
                 <div>
                     <span>Latest Enquiry</span>
                     <strong id="latestEnquiry">—</strong>
@@ -89,24 +73,24 @@
                     <h2>All Enquiries</h2>
                 </div>
 
-               <div class="search-controls">
-    <div class="search-box">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search enquiries..."
-        >
-    </div>
+                <div class="search-controls">
+                    <div class="search-box">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search enquiries..."
+                        >
+                    </div>
 
-    <div class="filter-box">
-        <select id="statusFilter">
-            <option value="ALL">All Status</option>
-            <option value="NEW">New</option>
-            <option value="CONTACTED">Contacted</option>
-            <option value="COMPLETED">Completed</option>
-        </select>
-    </div>
-</div>
+                    <div class="filter-box">
+                        <select id="statusFilter">
+                            <option value="ALL">All Status</option>
+                            <option value="NEW">New</option>
+                            <option value="CONTACTED">Contacted</option>
+                            <option value="COMPLETED">Completed</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <div class="table-wrapper">
@@ -123,6 +107,7 @@
                             <th>Status</th>
                         </tr>
                     </thead>
+
                     <tbody id="enquiriesTableBody">
                     </tbody>
                 </table>
@@ -130,56 +115,56 @@
                 <div class="empty-state" id="emptyState">
                     <p>No enquiries found.</p>
                 </div>
-
-                <div class="modal" id="enquiryModal">
-    <div class="modal-overlay" id="modalOverlay"></div>
-
-    <div class="modal-card">
-        <button class="modal-close" id="modalClose" type="button">×</button>
-
-        <span class="dashboard-label">ENQUIRY DETAILS</span>
-        <h2>Customer Enquiry</h2>
-
-        <div class="detail-grid">
-            <div class="detail-item">
-                <span>Name</span>
-                <strong id="detailName">—</strong>
-            </div>
-
-            <div class="detail-item">
-                <span>Company</span>
-                <strong id="detailCompany">—</strong>
-            </div>
-
-            <div class="detail-item">
-                <span>Email</span>
-                <strong id="detailEmail">—</strong>
-            </div>
-
-            <div class="detail-item">
-                <span>Phone</span>
-                <strong id="detailPhone">—</strong>
-            </div>
-
-            <div class="detail-item">
-    <span>Status</span>
-    <strong id="detailStatus">NEW</strong>
-</div>
-
-            <div class="detail-item detail-message">
-                <span>Message</span>
-                <p id="detailMessage">—</p>
-            </div>
-
-            <div class="detail-item">
-                <span>Submitted</span>
-                <strong id="detailDate">—</strong>
-            </div>
-        </div>
-    </div>
-</div>
             </div>
         </section>
+
+        <div class="modal" id="enquiryModal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+
+            <div class="modal-card">
+                <button class="modal-close" id="modalClose" type="button">×</button>
+
+                <span class="dashboard-label">ENQUIRY DETAILS</span>
+                <h2>Customer Enquiry</h2>
+
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <span>Name</span>
+                        <strong id="detailName">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Company</span>
+                        <strong id="detailCompany">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Email</span>
+                        <strong id="detailEmail">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Phone</span>
+                        <strong id="detailPhone">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Status</span>
+                        <strong id="detailStatus">NEW</strong>
+                    </div>
+
+                    <div class="detail-item detail-message">
+                        <span>Message</span>
+                        <p id="detailMessage">—</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <span>Submitted</span>
+                        <strong id="detailDate">—</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </main>
